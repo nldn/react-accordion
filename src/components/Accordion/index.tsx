@@ -9,6 +9,11 @@ const Header = styled.div`
   background-color: #d5d5d5;
 `;
 
+const Toggle = styled.span`
+  cursor: pointer;
+  padding: 15px 24px;
+`;
+
 const Content = styled.div<{ isOpen: boolean, height: number }>`
   overflow: hidden;
   border: 1px solid #d5d5d5;
@@ -30,7 +35,7 @@ export const Accordion: FC = ({ children }) => {
   return (
     <div>
       <Header>
-        <span onClick={() => setIsOpen(!isOpen)}>Toggle</span>
+        <Toggle onClick={() => setIsOpen(!isOpen)}>Toggle</Toggle>
       </Header>
       <Content ref={contentRef} isOpen={isOpen} height={height}>
         {children}
