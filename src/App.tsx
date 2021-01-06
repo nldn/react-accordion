@@ -23,7 +23,10 @@ function App() {
           </Accordion>
 
           <Accordion>
-            <div style={{ padding: 24 }}>
+            <div style={{ padding: 16 }}>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem veritatis dolore quibusdam, nemo eveniet doloremque tempora quisquam laborum vitae dolores facere rerum aperiam eos fugiat voluptatibus consequuntur labore ipsum facilis?
+              </p>
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem veritatis dolore quibusdam, nemo eveniet doloremque tempora quisquam laborum vitae dolores facere rerum aperiam eos fugiat voluptatibus consequuntur labore ipsum facilis?
               </p>
