@@ -1,24 +1,39 @@
-import React from 'react';
-import logo from './logo.svg';
+import styled from 'styled-components';
 import './App.css';
+import { Accordion } from './components/Accordion';
+
+const Container = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 128px;
+`;
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Container>
+        <div style={{ width: 768 }}>
+          <Accordion>
+            <div style={{ padding: 24 }}>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem veritatis dolore quibusdam, nemo eveniet doloremque tempora quisquam laborum vitae dolores facere rerum aperiam eos fugiat voluptatibus consequuntur labore ipsum facilis?
+              </p>
+            </div>
+          </Accordion>
+
+          <Accordion>
+            <div style={{ padding: 16 }}>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem veritatis dolore quibusdam, nemo eveniet doloremque tempora quisquam laborum vitae dolores facere rerum aperiam eos fugiat voluptatibus consequuntur labore ipsum facilis?
+              </p>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem veritatis dolore quibusdam, nemo eveniet doloremque tempora quisquam laborum vitae dolores facere rerum aperiam eos fugiat voluptatibus consequuntur labore ipsum facilis?
+              </p>
+            </div>
+          </Accordion>
+        </div>
+      </Container>
     </div>
   );
 }
