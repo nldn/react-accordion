@@ -1,4 +1,4 @@
-import { FC, useLayoutEffect, useRef, useState } from 'react';
+import React, { FC, useRef, useState } from 'react';
 import styled from 'styled-components';
 
 const Header = styled.div`
@@ -14,30 +14,24 @@ const Toggle = styled.span`
   padding: 15px 24px;
 `;
 
-const Content = styled.div<{ isOpen: boolean, height: number }>`
+const Content = styled.div<{ isOpen: boolean, contentRef: React.RefObject<HTMLDivElement> }>`
   overflow: hidden;
   border: 1px solid #d5d5d5;
-  max-height: ${({ isOpen, height }) => isOpen === true ? height + 'px' : 0};
+  max-height: ${({ isOpen, contentRef }) => isOpen ? contentRef?.current?.scrollHeight + 'px' : 0};
   transition: max-height 500ms ease-in-out;
 `;
 
 export const Accordion: FC = ({ children }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [height, setHeight] = useState(0);
-  const contentRef = useRef<HTMLDivElement | null>(null);
+  const contentRef = useRef<HTMLDivElement>(null);
 
-  useLayoutEffect(() => {
-    if (contentRef.current) {
-      setHeight(contentRef.current.scrollHeight);
-    };
-  }, []);
 
   return (
     <div>
       <Header>
         <Toggle onClick={() => setIsOpen(!isOpen)}>Toggle</Toggle>
       </Header>
-      <Content ref={contentRef} isOpen={isOpen} height={height}>
+      <Content ref={contentRef} contentRef={contentRef} isOpen={isOpen}>
         {children}
       </Content>
     </div>
